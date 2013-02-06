@@ -49,8 +49,8 @@ public class Cache extends Module {
 	}
 
 	@Override
-	public void SetSourceModule(int index, Module sourceModule) {
-		super.SetSourceModule(index, sourceModule);
+	public void setSourceModule(int index, Module sourceModule) {
+		super.setSourceModule(index, sourceModule);
 		isCached = false;
 	}
 

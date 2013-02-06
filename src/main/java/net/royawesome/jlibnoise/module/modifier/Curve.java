@@ -86,8 +86,8 @@ public class Curve extends Module {
 	public double GetValue(double x, double y, double z) {
 		if (SourceModule[0] == null)
 			throw new NoModuleException();
-		if (controlPoints.size() >= 4)
-			throw new RuntimeException("must have 4 or less control points");
+//		if (controlPoints.size() >= 4)
+//			throw new RuntimeException("must have 4 or less control points");
 
 		// Get the output value from the source module.
 		double sourceModuleValue = SourceModule[0].GetValue(x, y, z);
@@ -112,8 +112,16 @@ public class Curve extends Module {
 		// source module is greater than the largest input value or less than the
 		// smallest input value of the control point array), get the corresponding
 		// output value of the nearest control point and exit now.
-		if (index1 == index2) {
+		if (index1 == index2) 
+		{
+		if(indexPos == controlPoints.size())
+		{
+			return controlPoints.get(indexPos-1).outputValue;
+		}
+		else
+		{
 			return controlPoints.get(indexPos).outputValue;
+		}
 		}
 
 		// Compute the alpha value used for cubic interpolation.

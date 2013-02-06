@@ -80,7 +80,7 @@ public class Select extends Module {
 		return upperBound;
 	}
 
-	public void setBounds(double upper, double lower) {
+	public void setBounds(double lower, double upper) {
 		if (lower > upper)
 			throw new IllegalArgumentException("lower must be less than upper");
 		this.lowerBound = lower;

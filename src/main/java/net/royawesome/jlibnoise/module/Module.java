@@ -49,7 +49,7 @@ public abstract class Module {
 
 	}
 
-	public void SetSourceModule(int index, Module sourceModule) {
+	public void setSourceModule(int index, Module sourceModule) {
 		if (SourceModule == null)
 			return;
 		if (index >= GetSourceModuleCount() || index < 0) {
